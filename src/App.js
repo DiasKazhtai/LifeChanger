@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Main from './pages/Main';
 import Test from './pages/Test/inedx';
 
@@ -8,6 +8,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={Main} />
         <Route path='/test' component={Test} />
+        <Redirect to='/' />
       </Switch>
     </BrowserRouter>
   );
