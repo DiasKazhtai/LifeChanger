@@ -2,15 +2,21 @@ import styles from './Input.module.scss';
 
 export default function TelephoneInput() {
 
-    const getInputNumberValue = (input: any) => {
-        
-        return input.value.replace(/\D/g, '');
-    };
+    const onPhoneKeyDown = (e: any) => {
+        let input = e.target;
+        if(e.keyCode === 8 && getInputNumberValue(input).length === 1) {
+            input.value = ''; 
+        }
+    }
+
+    const getInputNumberValue = (input: any) => input.value.replace(/\D/g, '');
+ 
 
     const onPhoneInput = (e: any) => {
         const input = e.target;
         let inputNumbersValue = getInputNumberValue(input);
         let formattedInputValue = '';
+        let selectionStart = input.selectionStart;
 
         if(!inputNumbersValue) return input.value = '';
 
@@ -46,6 +52,9 @@ export default function TelephoneInput() {
     };
 
     return (
-        <input type="tel" maxLength={18} className={styles.Input} onInput={(e) => onPhoneInput(e)} />
+        <input type="tel" maxLength={18} 
+        className={styles.Input}
+        onKeyDown={(e) => onPhoneKeyDown(e)} 
+        onInput={(e) => onPhoneInput(e)} />
     )
 };
