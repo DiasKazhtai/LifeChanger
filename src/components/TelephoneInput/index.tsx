@@ -20,6 +20,10 @@ export default function TelephoneInput() {
 
         if(!inputNumbersValue) return input.value = '';
 
+        if(input.value.length !== selectionStart) {
+            console.log('werwer');
+        };
+
         if(['7', '8', '9'].includes(inputNumbersValue[0])) {
             // Russian number
             if(inputNumbersValue[0] === '9') inputNumbersValue = '7' + inputNumbersValue;
