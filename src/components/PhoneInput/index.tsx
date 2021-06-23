@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './Input.module.scss';
 import cn from 'classnames';
 
-export default function PhoneInput() {
+export default function PhoneInput({style}: any) {
+
+    console.log(style)
 
     const [isActive, setActive] = useState<Boolean>(false);
     const [numberLength, setLength] = useState<Number>(0);
@@ -85,6 +87,7 @@ export default function PhoneInput() {
     return (
         <div className={styles.Input} 
             onClick={() => setActive(true)} 
+            style={style}
         >
             <label 
                 htmlFor="phoneInput"

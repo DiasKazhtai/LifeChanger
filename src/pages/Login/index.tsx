@@ -1,3 +1,4 @@
+import Input from '../../components/Input';
 import PhoneInput from '../../components/PhoneInput';
 import styles from './Login.module.scss';
 
@@ -9,7 +10,10 @@ export default function Login() {
                     <div className={styles.Login__auth_item}>Вход</div>
                     <div className={styles.Login__auth_item}>Регистрация</div>
                 </div>
-                <PhoneInput />
+                <PhoneInput style={{
+                    marginBottom: '50px',
+                }} />
+                <Input />
             </div>
         </div>
     )
