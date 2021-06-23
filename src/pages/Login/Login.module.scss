@@ -11,6 +11,8 @@
         margin-bottom: 50px;
 
         &_item {
+            cursor: pointer;
+            
             &:first-child {
                 color: #000;
                 margin-right: 42px;

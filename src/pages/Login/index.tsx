@@ -1,4 +1,4 @@
-import TelephoneInput from '../../components/TelephoneInput';
+import PhoneInput from '../../components/PhoneInput';
 import styles from './Login.module.scss';
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
                     <div className={styles.Login__auth_item}>Вход</div>
                     <div className={styles.Login__auth_item}>Регистрация</div>
                 </div>
-                <TelephoneInput />
+                <PhoneInput />
             </div>
         </div>
     )
