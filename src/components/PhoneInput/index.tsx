@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Input.module.scss';
 import cn from 'classnames';
 
 export default function PhoneInput() {
 
-    const [isActive, setActive] = useState(false);
-    const [numberLength, setLength] = useState(0);
+    const [isActive, setActive] = useState<Boolean>(false);
+    const [numberLength, setLength] = useState<Number>(0);
 
     const onPhoneKeyDown = (e: any) => {
         let input = e.target;
@@ -15,10 +15,9 @@ export default function PhoneInput() {
         }
     };
 
-    const getInputNumberValue = (input: any) => input.value.replace(/\D/g, '');
- 
+    const getInputNumberValue = (input: any): string => input.value.replace(/\D/g, '');
 
-    const onPhoneInput = (e: any) => {
+    const onPhoneInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         const input = e.target;
         let inputNumbersValue = getInputNumberValue(input);
         let formattedInputValue = '';
@@ -68,7 +67,7 @@ export default function PhoneInput() {
     };
 
     useEffect(() => {
-       const closeLabeHander = document.addEventListener('click', (e: any) : void => {
+       const closeLabeHander: any = document.addEventListener('click', (e: any) : void => {
             if(numberLength !== 18) {
                 if(e.target.id !== 'phoneInput') {
                     setActive(false);
@@ -78,9 +77,9 @@ export default function PhoneInput() {
             }
         });
 
-        // return () => {
-        //     document.removeEventListener('click', closeLabeHander);
-        // };
+        return () => {
+            document.removeEventListener('click', closeLabeHander);
+        };
     });
 
     return (
@@ -95,8 +94,8 @@ export default function PhoneInput() {
                 id="phoneInput" 
                 type="tel" maxLength={18} 
                 className={styles.Input__input}
-                onKeyDown={(e) => onPhoneKeyDown(e)} 
-                onInput={(e) => onPhoneInput(e)} 
+                onKeyDown={onPhoneKeyDown} 
+                onInput={onPhoneInput} 
             />
         </div>
     )
