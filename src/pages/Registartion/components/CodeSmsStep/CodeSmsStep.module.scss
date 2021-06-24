@@ -1,3 +1,16 @@
 .CodeSmsStep {
-    color: black;
+    width: 370px;
+    margin: 0 auto;
+
+    &__numberText {
+        margin-bottom: 20px;
+        
+        & > span {
+            color: #9baafd;
+        }
+    }
+
+    &__codeText {
+        margin-bottom: 40px;
+    }
 }
