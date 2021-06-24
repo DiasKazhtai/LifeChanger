@@ -22,14 +22,18 @@ const TABS = [
 ];
 
 export default function Auth() {
-    // const { state = { activeStep: 0 } } = useLocation();
+    const [state, setState] = useState<any>(0);
+    const tab = TABS[state];
 
-    const tab = TABS[0];
+    const updateDate = (value: any): void => {
+        setState(value);
+    };
+
     return(
         <div className={styles.Auth}>
             <div className={styles.Auth__header}>Auth</div>
             <div className={styles.Auth__title}>Личный кабинет</div>
-            {tab && <tab.component />}
+            {tab && <tab.component updateDate={updateDate} />}
         </div>
     ) 
 };

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Input.module.scss';
 import cn from 'classnames';
 
-export default function PhoneInput({style}: any) {
-
-    console.log(style)
+export default function PhoneInput({style}: React.HTMLAttributes<CSSRule>) {
 
     const [isActive, setActive] = useState<Boolean>(false);
     const [numberLength, setLength] = useState<Number>(0);
@@ -67,22 +65,6 @@ export default function PhoneInput({style}: any) {
         input.value = formattedInputValue;
         setLength(formattedInputValue.length);
     };
-
-    useEffect(() => {
-       const closeLabeHander: any = document.addEventListener('click', (e: any) : void => {
-            if(numberLength !== 18) {
-                if(e.target.id !== 'phoneInput') {
-                    setActive(false);
-                }
-            } else {
-                setActive(true);
-            }
-        });
-
-        return () => {
-            document.removeEventListener('click', closeLabeHander);
-        };
-    });
 
     return (
         <div className={styles.Input} 

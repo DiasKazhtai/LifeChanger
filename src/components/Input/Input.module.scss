@@ -20,15 +20,40 @@
         top: 13px;
         width: 100%;
         z-index: 3;
-        transition: 0.5s;
+        transition: 0.2s;
         background-color: #fff;
 
         &_active {
-            width: 237px;
-            transition: 0.5s;
+            width: fit-content;
+            transition: 0.2s;
             transform: scale(0.7);
             top: -14px;
-            left: -7px;
+            left: 18px;
+        }
+    }
+
+    &__visibility {
+        position: absolute;
+        right: 0;
+        top: 22px;
+        z-index: 4;
+        display: block;
+
+        &__off {
+            display: none;
+        }
+    }
+
+    
+    &__visibilityOff {
+        position: absolute;
+        right: 0;
+        top: 22px;
+        display: none;
+        z-index: 4;
+        
+        &__on {
+            display: block;
         }
     }
 }
