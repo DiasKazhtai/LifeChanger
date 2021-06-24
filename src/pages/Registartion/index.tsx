@@ -1,14 +1,30 @@
-import styles from './Registration.module.scss';
+import { useState } from "react";
+import CodeSmsStep from "./components/CodeSmsStep";
+import NumberStep from "./components/NumberStep";
+
+const TABS = [
+    {
+        component: NumberStep,
+        title: 'NumberStep',
+    },
+    {
+        component: CodeSmsStep,
+        title: 'CodeSmsStep',
+    },
+];
 
 export default function Registration({ updateDate }: any) {
-    return (
-        <div className={styles.Registration}>
-        <div className={styles.Registration__container}>
-            <div className={styles.Registration__auth}>
-                <div className={styles.Registration__auth_item} onClick={() => updateDate(0)}>Вход</div>
-                <div className={styles.Registration__auth_item}>Регистрация</div>
-            </div>
-        </div>
-    </div>
-    )
-}
+
+        const [state, setState] = useState<any>(0);
+        const tab = TABS[state];
+
+        const regUpdateDate = (value: any): void => {
+            setState(value);
+        };
+
+        return(
+                <>
+                    {tab && <tab.component regUpdateDate={regUpdateDate} />}
+                </>
+        ) 
+};

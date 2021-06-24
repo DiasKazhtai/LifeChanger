@@ -38,6 +38,7 @@
         top: 22px;
         z-index: 4;
         display: block;
+        cursor: pointer;
 
         &__off {
             display: none;
@@ -51,6 +52,7 @@
         top: 22px;
         display: none;
         z-index: 4;
+        cursor: pointer;
         
         &__on {
             display: block;

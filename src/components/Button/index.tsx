@@ -3,11 +3,18 @@ import styles from './Button.module.scss';
 
 interface ButtonInterface {
     children: string,
-    style: any,
+    style?: any,
+    disabled?: boolean,
+    onClick?: () => void,
 };
 
-export default function Button({style, children}: ButtonInterface) {
+export default function Button({style, children, disabled, onClick}: ButtonInterface) {
+
     return (
-        <button className={styles.Button} style={style}>{children}</button>
+        <button
+            onClick={onClick}
+            className={styles.Button}
+            disabled={disabled} 
+            style={style}>{children}</button>
     )
 };
