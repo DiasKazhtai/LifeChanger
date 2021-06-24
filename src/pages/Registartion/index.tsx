@@ -24,7 +24,7 @@ export default function Registration({ updateDate }: any) {
 
         return(
                 <>
-                    {tab && <tab.component regUpdateDate={regUpdateDate} />}
+                    {tab && <tab.component updateDate={updateDate} regUpdateDate={regUpdateDate} />}
                 </>
         ) 
 };
