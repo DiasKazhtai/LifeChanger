@@ -39,7 +39,7 @@ export default function Input({ type, label, style }: InputInterface) {
                             <label 
                                 className={cn(styles.Input__label, [{[styles.Input__label_active]: isActive, }])}>{label}</label>
                             <input 
-                                type={isVisibility ? 'text': 'password'} 
+                                type={'text'} 
                                 className={styles.Input__input}
                                 maxLength={16}
                             />

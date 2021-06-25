@@ -6,6 +6,7 @@ export default function CodeSmsStep({ updateDate, regUpdateDate }: any) {
 
     return (
         <div className={styles.CodeSmsStep}>
+            <div className={styles.CodeSmsStep__back} onClick={() => regUpdateDate(0)}>Назад</div>
             <div className={styles.CodeSmsStep__numberText}>Сейчас придёт СМС-ка с кодом подтверждения
                 на твой номер <span>+7 (911) 271-65-23</span>
             </div>

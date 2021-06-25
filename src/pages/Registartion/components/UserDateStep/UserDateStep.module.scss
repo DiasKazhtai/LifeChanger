@@ -1,9 +1,30 @@
 .UserDateStep {
     width: 370px;
     margin: 0 auto;
+    position: relative;
+    margin-top: 100px;
 
     &__text {
         font-weight: 600;
         margin-bottom: 50px;
+    }
+
+    &__skipText {
+        color: #9baafd;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 115px;
+    }
+
+    &__back {
+        position: absolute;
+        left: -33vw;
+        top: 11px;
+        width: 60px;
+        height: 30px;
+        background: #dedede;
+        text-align: center;
+        border-radius: 16px;
+        cursor: pointer;
     }
 }
