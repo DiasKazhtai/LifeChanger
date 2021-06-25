@@ -4,9 +4,11 @@ import cn from 'classnames';
 
 interface InputInterface {
     type?: string,
+    label?: string,
+    style?: any,
 };
 
-export default function Input({ type }: InputInterface) {
+export default function Input({ type, label, style }: InputInterface) {
     const [isActive, setActive] = useState<Boolean>(false);
     const [isVisibility, setVisibility] = useState<Boolean>(false);
 
@@ -30,5 +32,17 @@ export default function Input({ type }: InputInterface) {
                     onClick={() => setVisibility(false)}
                         >visibility_off</span>
             </div>
-    ): (<div>45</div>) )
+    ): (            <div className={styles.Input}
+                        style={style}
+                        onClick={() => setActive(true)} 
+                        >
+                            <label 
+                                className={cn(styles.Input__label, [{[styles.Input__label_active]: isActive, }])}>{label}</label>
+                            <input 
+                                type={isVisibility ? 'text': 'password'} 
+                                className={styles.Input__input}
+                                maxLength={16}
+                            />
+                        </div>
+        ))
 };

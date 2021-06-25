@@ -32,7 +32,6 @@ export default function Auth() {
     return(
         <div className={styles.Auth}>
             <div className={styles.Auth__header}>Auth</div>
-            <div className={styles.Auth__title}>Личный кабинет</div>
             {tab && <tab.component updateDate={updateDate} />}
         </div>
     ) 

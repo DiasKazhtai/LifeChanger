@@ -24,10 +24,10 @@
         background-color: #fff;
 
         &_active {
-            width: fit-content;
+            width: auto;
             transition: 0.2s;
             transform: scale(0.7);
-            top: -14px;
+            top: -18px;
             left: 18px;
         }
     }

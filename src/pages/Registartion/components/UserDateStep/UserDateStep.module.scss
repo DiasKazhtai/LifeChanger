@@ -1,3 +1,9 @@
 .UserDateStep {
-    color: red;
+    width: 370px;
+    margin: 0 auto;
+
+    &__text {
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
 }
