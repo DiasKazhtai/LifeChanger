@@ -6,7 +6,7 @@ export default function CodeSmsInput() {
     const secondInputRef = useRef<HTMLInputElement>(null);
     const thirdInputRef = useRef<HTMLInputElement>(null);
     const fourthInputRef = useRef<HTMLInputElement>(null);
-
+    
     const inputHandler = (e: React.KeyboardEvent): void => {
         if(firstInputRef.current?.value.length === 1) {            
             if(e.code !== 'Backspace') {
@@ -31,7 +31,6 @@ export default function CodeSmsInput() {
         firstInputRef.current?.focus();
     }, []);
 
-
     return(
         <div className={styles.CodeSmsInput}>
             <div className={styles.CodeSmsInput__container} onKeyDown={inputHandler}>
@@ -40,6 +39,7 @@ export default function CodeSmsInput() {
                 <input type="text" maxLength={1} className={styles.CodeSmsInput__item} ref={thirdInputRef} />
                 <input type="text" maxLength={1} className={styles.CodeSmsInput__item} ref={fourthInputRef} />
             </div>
+            {/* <div className={styles.CodeSmsInput__time}>Новый код можно запросить через {time} сек</div> */}
         </div>
     )
 };

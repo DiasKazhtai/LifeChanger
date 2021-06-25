@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CodeSmsStep from "./components/CodeSmsStep";
 import NumberStep from "./components/NumberStep";
+import UserDateStep from "./components/UserDateStep";
 
 const TABS = [
     {
@@ -10,6 +11,10 @@ const TABS = [
     {
         component: CodeSmsStep,
         title: 'CodeSmsStep',
+    },
+    {
+        component: UserDateStep,
+        title: 'UserDateStep',
     },
 ];
 
